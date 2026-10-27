@@ -32,7 +32,7 @@ A summary of the docs at https://ardi.com.au/docs/mplreport:welcome, collected i
 ```python
 import sys
 import os
-#The mplreport library is often in the base folder
+#The mplreport library is often in the base folder, so add it to the search-path
 sys.path.insert(0,os.path.dirname(os.path.dirname(__file__)))
 import mplreport as mplreport
 
@@ -132,6 +132,4 @@ Dataframe column names are the asset name and property name seperated by a space
 
 ## Testing
 
-Reports can only be run inside an ARDI install, where `ardi.util.mplreport` and a server are available. If Python is available locally, at least run `python -m py_compile <ReportName>/report.py`. Tell the user the report wasn't run against ARDI.
-
-## 
+Reports can only be run inside an ARDI install, where `mplreport` and a server are available. If Python is available locally, at least run `python -m py_compile <ReportName>/report.py`. Tell the user the report wasn't run against ARDI.
