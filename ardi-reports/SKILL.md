@@ -69,6 +69,8 @@ def CreateReport(report,args):
 
 Match the docs' style: 3-space indentation, `#Comment` with no space after the `#`, and `report,args` with no space after the comma.
 
+The 'Title' function adds a header at the top of the page (which defaults to landscape in A4 or Letter, depending on setup). The header takes up approx 10% of the vertical height of the landscape page.
+
 ## Decorator and function
 
 - `@mplreport.ardireport("<Report Name>")`: the name appears in the title block.
@@ -132,4 +134,10 @@ Dataframe column names are the asset name and property name seperated by a space
 
 ## Testing
 
-Reports can only be run inside an ARDI install, where `mplreport` and a server are available. If Python is available locally, at least run `python -m py_compile <ReportName>/report.py`. Tell the user the report wasn't run against ARDI.
+The mplreport library and associated files can be found at https://github.com/OptrixARDI/mplreport/tree/main/src. All files are expected to be in the parent directory of the report.py file.
+
+If testing, the command-line parameters are as follows....
+
+startdate enddate target_file timezone --nopng --server <servername>
+
+Where 'startdate' and 'enddate' are UTC times in YYYY-MM-DD HH:MM:SS format, 'target_file' is the full path name of the destination file (without file extension), and server is the URL to the ARDI server containing data, such as 'demo.optrix.com.au/s/default'.
